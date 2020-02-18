@@ -15,24 +15,24 @@ export default class Form extends React.Component {
   };
 
   handleSubmit = e => {
-      e.preventDefault()
+    e.preventDefault();
     this.props.add(this.state.input);
+    this.setState({ input: "" });
   };
 
   render() {
     return (
-        <>
-      <form onSubmit={this.handleSubmit}>
-        <input
-          value={this.state.input}
-          name="input"
-          id="input"
-          placeholder={"new todo"}
-          onChange={this.handleChange}
-        />
-        <button type="submit">add todo</button>
-      </form>
-      
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            value={this.state.input}
+            name="input"
+            id="input"
+            placeholder={"new todo"}
+            onChange={this.handleChange}
+          />
+          <button type="submit">add todo</button>
+        </form>
       </>
     );
   }

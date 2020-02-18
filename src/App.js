@@ -23,11 +23,13 @@ class App extends React.Component {
       })
     });
   };
+
   filter = () => {
     this.setState({
       todos: this.state.todos.filter(item => !item.completed)
     });
   };
+  
   addTodo = todo => {
     console.log("im the todo", todo);
     this.setState({
@@ -45,6 +47,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+      <h1>todo app</h1>
         <Form add={this.addTodo} />
 
         {this.state.todos.map(i => (
